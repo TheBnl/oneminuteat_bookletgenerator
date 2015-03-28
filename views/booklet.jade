@@ -5,6 +5,15 @@ html
     //link(rel='stylesheet', href='/stylesheets/style.css')
     //link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
   body
-    section.booklet
-      p= file
+
+    section.cover
+      h1= '3.245 minutes '+title
+
+    section.inside
+      each line in logData
+        img(src=line.url)
+
+    section.colophon
+
+    section.back
       
