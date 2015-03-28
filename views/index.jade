@@ -1,0 +1,12 @@
+doctype 
+html
+  head
+    title= title
+    //link(rel='stylesheet', href='/stylesheets/style.css')
+    //link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
+  body
+    section.loglist
+      ul
+        each file in files
+          li
+            a(href='/print/'+file, title='Transform '+file+' into a booklet!')= file

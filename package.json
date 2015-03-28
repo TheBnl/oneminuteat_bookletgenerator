@@ -1,0 +1,25 @@
+{
+  "name": "OneMinuteAt-Publication_Generator",
+  "version": "0.0.1",
+  "description": "OneMinuteAt Publication Generator is an booklet generator that converts a logfile into an printable html page",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@url"
+  },
+  "dependencies": {
+    "express": "~4.9.x",
+    "jade": "*"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "keywords": [
+    "node"
+  ],
+  "license": "MIT"
+}

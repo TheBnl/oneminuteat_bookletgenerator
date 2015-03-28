@@ -1,0 +1,5 @@
+{
+  "name": "OneMinuteAt Publication Generator",
+  "description": "OneMinuteAt Publication Generator is an booklet generator that converts a logfile into an printable html page",
+  "keywords": ["node"]
+}
