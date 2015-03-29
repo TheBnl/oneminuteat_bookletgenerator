@@ -1,17 +1,16 @@
 doctype 
 html
-  head
-    title= title
-    //link(rel='stylesheet', href='/stylesheets/style.css')
-    //link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
+  include ./includes/head.jade
   body
 
-    section.cover
+    section.cover(style='background-image: url('+logData[5].url+');')
       h1= '3.245 minutes '+title
 
     section.inside
       each line in logData
-        img(src=line.url)
+        figure
+          img(src= line.url alt= line.deviceName + " looked at this image at "+ line.timestamp title= line.deviceName + " looked at this image at "+ line.timestamp)
+          figcaption= line.deviceName + " looked at:"
 
     section.colophon
 

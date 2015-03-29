@@ -1,0 +1,153 @@
+/* line 5, ../../../../../../../../../../.rvm/rubies/ruby-2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../../../.rvm/rubies/ruby-2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../../.rvm/rubies/ruby-2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../../.rvm/rubies/ruby-2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../../.rvm/rubies/ruby-2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../../.rvm/rubies/ruby-2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../../.rvm/rubies/ruby-2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../../.rvm/rubies/ruby-2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../../.rvm/rubies/ruby-2.1.2/lib/ruby/gems/2.1.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 5, ../sass/app.scss */
+body {
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+/* line 10, ../sass/app.scss */
+h1 {
+  color: black;
+  text-shadow: 1px 1px 0px #FFF;
+  font-size: 30px;
+  text-align: center;
+  padding: 30px 6px 60px 6px;
+}
+
+/* line 19, ../sass/app.scss */
+section.cover {
+  background-size: cover;
+}
+
+/* line 24, ../sass/app.scss */
+figure {
+  float: left;
+}
+/* line 26, ../sass/app.scss */
+figure img {
+  margin: 12px;
+}
+/* line 29, ../sass/app.scss */
+figure figcaption {
+  float: left;
+  margin: 24px;
+}
+
+@media print {
+  /* line 2, ../sass/_print.scss */
+  section {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* line 7, ../sass/_print.scss */
+  figure {
+    page-break-inside: avoid;
+  }
+
+  /* line 11, ../sass/_print.scss */
+  figcaption:before {
+    counter-increment: figurenum;
+    content: "Fig." counter(figurenum) ". ";
+  }
+
+  @page {
+    size: A5;
+    marks: crop;
+    bleed: 1cm;
+    @bottom-center {
+      content: "p." counter(page);
+      font-size: 8pt;
+    }
+  }
+  @page :first {
+    page-break-after: right;
+    @bottom-center {
+      content: none;
+    }
+  }
+  @page :left {
+    margin-top: 1.5cm;
+    margin-right: 1.25cm;
+    margin-bottom: 4cm;
+    margin-left: 1.75cm;
+    @left-middle {
+      content: "p." counter(page);
+      text-align: left;
+    }
+  }
+  @page :right {
+    margin-top: 1.5cm;
+    margin-right: 1.75cm;
+    margin-bottom: 4cm;
+    margin-left: 1.25cm;
+    @right-middle {
+      content: "p." counter(page);
+      text-align: right;
+    }
+  }
+}

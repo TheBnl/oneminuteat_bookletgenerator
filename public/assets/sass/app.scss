@@ -1,0 +1,35 @@
+@import "compass/reset";
+
+$baseUnit: 6px;
+
+body {
+    font-family: sans-serif;
+    font-size: $baseUnit*2;
+}
+
+h1 {
+  color: black;
+  text-shadow: 1px 1px 0px #FFF;
+  font-size: $baseUnit*5;
+  text-align: center;
+  padding: $baseUnit*5 $baseUnit $baseUnit*10 $baseUnit;
+}
+
+section {
+  &.cover {
+    background-size: cover;
+  }
+}
+
+figure {
+  float: left;
+  img {
+    margin: $baseUnit*2;
+  }
+  figcaption {
+    float: left;
+    margin: $baseUnit*4;
+  }
+}
+
+@import "print";

@@ -1,0 +1,55 @@
+@media print {
+  section {
+    width: 100%;
+    height: 100%;
+  }
+
+  figure {
+    page-break-inside: avoid;
+  }
+
+  figcaption:before {
+    counter-increment: figurenum;
+    content: "Fig." counter(figurenum) ". ";
+  }
+
+  @page {
+    size: A5;
+    marks: crop;
+    bleed: 1cm;
+
+    @bottom-center {
+      content: "p." counter(page);
+      font-size: 8pt;
+    }
+  }
+
+  @page :first {
+    page-break-after: right;
+    @bottom-center {
+      content: none;
+    }
+  }
+
+  @page :left {
+    margin-top: 1.5cm;
+    margin-right: 1.25cm;
+    margin-bottom: 4cm;
+    margin-left: 1.75cm;
+    @left-middle {
+      content: "p." counter(page);
+      text-align: left;
+    }
+  }
+
+  @page :right {
+    margin-top: 1.5cm;
+    margin-right: 1.75cm;
+    margin-bottom: 4cm;
+    margin-left: 1.25cm;
+    @right-middle {
+      content: "p." counter(page);
+      text-align: right;
+    }
+  }
+}

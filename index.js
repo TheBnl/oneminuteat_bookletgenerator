@@ -7,6 +7,7 @@ var express = require('express')
 app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
+app.use(express.static(__dirname + '/public'))
 
 // return a list of log files
 app.get('/', function(request, response) {
@@ -91,7 +92,7 @@ function dissect(line) {
       2: 'unknown',
       3: 'unknownTwo',
       4: 'timestamp',
-      5: 'getpost?',
+      5: 'requests',
       6: 'url',
       7: 'protocol',
       8: 'unknownThree',
