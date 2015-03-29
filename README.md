@@ -7,6 +7,4 @@ To generate a booklet you need to run the fllowing comand from terminal:
 
 `prince http://localhost:5000/print/logfile.log -o output.pdf`
 
-Make sure you have the node server running on the correct port and have [prince][1] installed.
-
-[1](http://www.princexml.com/download/)
+Make sure you have the node server running on the correct port and have [prince](http://www.princexml.com/download/) installed.
