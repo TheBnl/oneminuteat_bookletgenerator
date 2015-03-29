@@ -3,7 +3,6 @@ html
   include ./includes/head.jade
   body
 
-    // content: url("'+logData[0].url+'");
     section.cover.fullPage(style='background-image: url("'+logData[0].url+'");')
       h1= time+' '+title
 
@@ -20,7 +19,7 @@ html
           figcaption= line.deviceName + " looked at \u21a5"
 
     //section.colophon
-    // list all campured devices
+    // TODO: list all captured devices
 
     section.backCoverInside.fullPage(style='background-image: url("'+logData[lastLog-1].url+'");')
     section.backCover.fullPage(style='background-image: url("'+logData[lastLog].url+'");')
