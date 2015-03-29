@@ -1,9 +1,10 @@
 @import "compass/reset";
+@import "fonts";
 
 $baseUnit: 6px;
 
 body {
-    font-family: sans-serif;
+    font-family: $sans;
     font-size: $baseUnit*2;
 }
 
@@ -11,24 +12,34 @@ h1 {
   color: black;
   text-shadow: 1px 1px 0px #FFF;
   font-size: $baseUnit*5;
+  font-weight: 600;
   text-align: center;
-  padding: $baseUnit*5 $baseUnit $baseUnit*10 $baseUnit;
+  padding: $baseUnit*30 $baseUnit $baseUnit*100 $baseUnit;
 }
 
 section {
-  &.cover {
+  float: none;
+  display: block;
+  &.fullPage {
     background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100vh;
+  }
+  &.coverInstide, &.backCoverInside, &.backCover {
+    display: none;
   }
 }
 
 figure {
   float: left;
   img {
+    display: inline-block;
     margin: $baseUnit*2;
   }
   figcaption {
-    float: left;
     margin: $baseUnit*4;
+    margin: 0px $baseUnit*4 $baseUnit*4 $baseUnit*4;
   }
 }
 

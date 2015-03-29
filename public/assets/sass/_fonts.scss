@@ -1,0 +1,27 @@
+@import "fontfacemixin";
+
+// get source code pro
+//@include font-face("SourceCodePro", "../assets/fonts/sourcecodepro-regular-webfont", 400);
+//@include font-face("SourceCodePro", "../assets/fonts/sourcecodepro-bold-webfont", 700);
+
+// get source sans pro
+//@include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-extralight-webfont", 100);
+//@include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-extralightit-webfont", 100, italic);
+//@include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-light-webfont", 200);
+//@include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-lightit-webfont", 200, italic);
+@include font-face("SourceSansPro", "../fonts/sourcesanspro-regular-webfont", 400);
+//@include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-it-webfont", 400, italic);
+@include font-face("SourceSansPro", "../fonts/sourcesanspro-semibold-webfont", 600);
+//@include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-semiboldit-webfont", 600, italic);
+//@include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-bold-webfont", 700);
+//@include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-boldit-webfont", 700, italic);
+//@include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-black-webfont", 900);
+//@include font-face("SourceSansPro", "../assets/fonts/sourcesanspro-blackit-webfont", 900, italic);
+
+// get source serif pro
+//@include font-face("SourceSerifPro", "../assets/fonts/sourceserifpro-regular-webfont", 400);
+//@include font-face("SourceSerifPro", "../assets/fonts/sourceserifpro-bold-webfont", 700);
+
+//$mono: "SourceCodePro";
+$sans: "SourceSansPro", Helvetica, Arial, sans-serif;
+//$serif: "SourceSerifPro", Serif;

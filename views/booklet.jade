@@ -3,16 +3,25 @@ html
   include ./includes/head.jade
   body
 
-    section.cover(style='background-image: url('+logData[5].url+');')
-      h1= '3.245 minutes '+title
+    // content: url("'+logData[0].url+'");
+    section.cover.fullPage(style='background-image: url("'+logData[0].url+'");')
+      h1= time+' '+title
+
+    section.coverInstide.fullPage(style='background-image: url("'+logData[1].url+'");')
 
     section.inside
       each line in logData
-        figure
+        - var top = Math.ceil(Math.random() * (15 - 2) + 2) * 6 + 'px';
+        - var right = Math.ceil(Math.random() * (10 - 2) + 2) * 6 + 'px';
+        - var bottom = Math.ceil(Math.random() * (15 - 2) + 2) * 6 + 'px';
+        - var left = Math.ceil(Math.random() * (10 - 2) + 2) * 6 + 'px';
+        figure(style='margin:'+top+' '+right+' '+bottom+' '+left+';')
           img(src= line.url alt= line.deviceName + " looked at this image at "+ line.timestamp title= line.deviceName + " looked at this image at "+ line.timestamp)
-          figcaption= line.deviceName + " looked at:"
+          figcaption= line.deviceName + " looked at \u21a5"
 
-    section.colophon
+    //section.colophon
+    // list all campured devices
 
-    section.back
+    section.backCoverInside.fullPage(style='background-image: url("'+logData[lastLog-1].url+'");')
+    section.backCover.fullPage(style='background-image: url("'+logData[lastLog].url+'");')
       

@@ -63,91 +63,136 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 5, ../sass/app.scss */
+/*
+ * Font Face mixin by Jonathant Neal
+ * Get the gist here: https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
+ */
+@font-face {
+  font-family: "SourceSansPro";
+  font-weight: 400;
+  src: url("../fonts/sourcesanspro-regular-webfont.eot?") format("eot"), url("../fonts/sourcesanspro-regular-webfont.woff2") format("woff2"), url("../fonts/sourcesanspro-regular-webfont.woff") format("woff"), url("../fonts/sourcesanspro-regular-webfont.ttf") format("truetype"), url("../fonts/sourcesanspro-regular-webfont.svg#SourceSansPro") format("svg");
+}
+@font-face {
+  font-family: "SourceSansPro";
+  font-weight: 600;
+  src: url("../fonts/sourcesanspro-semibold-webfont.eot?") format("eot"), url("../fonts/sourcesanspro-semibold-webfont.woff2") format("woff2"), url("../fonts/sourcesanspro-semibold-webfont.woff") format("woff"), url("../fonts/sourcesanspro-semibold-webfont.ttf") format("truetype"), url("../fonts/sourcesanspro-semibold-webfont.svg#SourceSansPro") format("svg");
+}
+/* line 6, ../sass/app.scss */
 body {
-  font-family: sans-serif;
+  font-family: "SourceSansPro", Helvetica, Arial, sans-serif;
   font-size: 12px;
 }
 
-/* line 10, ../sass/app.scss */
+/* line 11, ../sass/app.scss */
 h1 {
   color: black;
   text-shadow: 1px 1px 0px #FFF;
   font-size: 30px;
+  font-weight: 600;
   text-align: center;
-  padding: 30px 6px 60px 6px;
+  padding: 180px 6px 600px 6px;
 }
 
-/* line 19, ../sass/app.scss */
-section.cover {
+/* line 20, ../sass/app.scss */
+section {
+  float: none;
+  display: block;
+}
+/* line 23, ../sass/app.scss */
+section.fullPage {
   background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100vh;
+}
+/* line 29, ../sass/app.scss */
+section.coverInstide, section.backCoverInside, section.backCover {
+  display: none;
 }
 
-/* line 24, ../sass/app.scss */
+/* line 34, ../sass/app.scss */
 figure {
   float: left;
 }
-/* line 26, ../sass/app.scss */
+/* line 36, ../sass/app.scss */
 figure img {
+  display: inline-block;
   margin: 12px;
 }
-/* line 29, ../sass/app.scss */
+/* line 40, ../sass/app.scss */
 figure figcaption {
-  float: left;
   margin: 24px;
+  margin: 0px 24px 24px 24px;
 }
 
 @media print {
-  /* line 2, ../sass/_print.scss */
-  section {
+  /* line 4, ../sass/_print.scss */
+  section.fullPage {
+    page: cover;
     width: 100%;
-    height: 100%;
+    height: 30cm;
+    display: block !important;
+  }
+  /* line 10, ../sass/_print.scss */
+  section.inside {
+    page: inside;
+    page-break-after: right;
   }
 
-  /* line 7, ../sass/_print.scss */
+  /* line 19, ../sass/_print.scss */
   figure {
     page-break-inside: avoid;
   }
 
-  /* line 11, ../sass/_print.scss */
-  figcaption:before {
-    counter-increment: figurenum;
-    content: "Fig." counter(figurenum) ". ";
-  }
-
   @page {
-    size: A5;
-    marks: crop;
-    bleed: 1cm;
-    @bottom-center {
-      content: "p." counter(page);
-      font-size: 8pt;
+    size: A4;
+    margin: 0;
+  }
+  @page inside:left {
+    margin-top: 1.5cm;
+    margin-right: 1.5cm;
+    margin-bottom: 2cm;
+    margin-left: 1cm;
+    @left-middle {
+      content: counter(page);
+      font-family: "SourceSansPro", Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      margin-left: 24px;
+      text-align: left;
+    }
+    @top-left {
+      content: "3 minutes";
+      font-family: "SourceSansPro", Helvetica, Arial, sans-serif;
+      font-weight: 600;
+    }
+  }
+  @page inside:right {
+    margin-top: 1.5cm;
+    margin-right: 1cm;
+    margin-bottom: 2cm;
+    margin-left: 1.5cm;
+    @right-middle {
+      content: counter(page);
+      font-family: "SourceSansPro", Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      text-align: right;
+      margin-right: 24px;
+    }
+    @bottom-right {
+      content: "at_home.log";
+      font-family: "SourceSansPro", Helvetica, Arial, sans-serif;
+      font-weight: 600;
     }
   }
   @page :first {
-    page-break-after: right;
-    @bottom-center {
-      content: none;
+    page-break-after: right !important;
+    @left-middle , @right-middle {
+      content: "" !important;
     }
   }
-  @page :left {
-    margin-top: 1.5cm;
-    margin-right: 1.25cm;
-    margin-bottom: 4cm;
-    margin-left: 1.75cm;
-    @left-middle {
-      content: "p." counter(page);
-      text-align: left;
-    }
-  }
-  @page :right {
-    margin-top: 1.5cm;
-    margin-right: 1.75cm;
-    margin-bottom: 4cm;
-    margin-left: 1.25cm;
-    @right-middle {
-      content: "p." counter(page);
-      text-align: right;
+  @page cover {
+    @left-middle , @right-middle {
+      content: "" !important;
     }
   }
 }
